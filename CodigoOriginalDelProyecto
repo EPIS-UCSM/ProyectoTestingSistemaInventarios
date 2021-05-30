@@ -6,7 +6,20 @@
 import os
 import sys
 import sqlite3
+from sqlite3 import Error
 
+
+def sql_connection():
+    try:
+        con=sqlite3.connect('sistemInventario.db')
+        print("Se conecto exitosamente con la base de datos SistemInvetario.db")
+        
+        except Error:
+            print(Error)
+            
+        finally:
+            con.close()
+            
 def agregar_articulo():
     os.system("cis")
     print("--Agregar Producto Nuevo--")
@@ -148,7 +161,7 @@ def eliminar_articulo():
         sys.exit() 
         
         
-del menu()
+def menu()
     os.system("cls")
     print("---Bienvenido al Módulo de Inventario de la Farmacia XD---")
     print("")
@@ -175,8 +188,10 @@ del menu()
     else:
         opcion = input("Ingrese una Opcion valida 0-4")
         menu(opciones)
-        
+  
+ sql_connection()
   menu()
+
       
       
       
